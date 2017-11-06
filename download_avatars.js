@@ -26,6 +26,18 @@ function downloadImageByURL(url, filePath) {
 
 function getRepoContributors(repoOwner, repoName, cb) {
 
+  if (repoOwner == undefined) {
+    console.log("Please provide a repo owner.")
+    return
+  }
+
+  if (repoName == undefined) {
+    console.log("Please provide a repo name.")
+    return
+  }
+
+  console.log(repoOwner);
+
   var options = {
     url: "https://api.github.com/repos/" + repoOwner + "/" + repoName + "/contributors",
     headers: {
